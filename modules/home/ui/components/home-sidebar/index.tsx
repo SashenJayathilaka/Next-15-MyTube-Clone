@@ -14,5 +14,3 @@ export const HomeSideBar = () => {
     </Sidebar>
   );
 };
-
-// 1.26
