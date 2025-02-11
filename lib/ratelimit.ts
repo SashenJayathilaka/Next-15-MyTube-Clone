@@ -3,5 +3,5 @@ import { redis } from "./redis";
 
 export const ratelimit = new Ratelimit({
   redis,
-  limiter: Ratelimit.slidingWindow(10, "10s"),
+  limiter: Ratelimit.slidingWindow(100, "10s"),
 });
