@@ -22,7 +22,7 @@ export const videosRouter = createTRPCRouter({
       new_asset_settings: {
         passthrough: userId,
         playback_policy: ["public"],
-        mp4_support: "standard",
+        /*   mp4_support: "standard", */
       },
       cors_origin: "*",
     });
@@ -32,6 +32,8 @@ export const videosRouter = createTRPCRouter({
       .values({
         userId: userId,
         title: "Untitled",
+        muxStatus: "waiting",
+        muxUploadId: upload.id,
       })
       .returning();
 
@@ -41,3 +43,5 @@ export const videosRouter = createTRPCRouter({
     };
   }),
 });
+
+// 07.48
