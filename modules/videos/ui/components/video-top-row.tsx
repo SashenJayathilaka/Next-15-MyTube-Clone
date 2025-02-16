@@ -14,14 +14,14 @@ const VideoTopRow: React.FC<VideoTopRowProps> = ({ video }) => {
   const compactViews = useMemo(() => {
     return Intl.NumberFormat("en", {
       notation: "compact",
-    }).format(780585);
-  }, []);
+    }).format(video.viewCount);
+  }, [video.viewCount]);
 
   const expendedViews = useMemo(() => {
     return Intl.NumberFormat("en", {
       notation: "standard",
-    }).format(780585);
-  }, []);
+    }).format(video.viewCount);
+  }, [video.viewCount]);
 
   const compactDate = useMemo(() => {
     return formatDistanceToNow(video.createdAt, { addSuffix: true });
