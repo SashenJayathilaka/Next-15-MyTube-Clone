@@ -11,6 +11,10 @@ type VideoPlayer = {
   onPlay?: () => void;
 };
 
+export const VideoPlayerSkeleton = () => {
+  return <div className="aspect-video bg-black rounded-xl" />;
+};
+
 const VideoPlayer: React.FC<VideoPlayer> = ({
   autoPlay,
   onPlay,
