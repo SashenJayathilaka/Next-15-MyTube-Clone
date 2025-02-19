@@ -3,6 +3,7 @@ import Mux from "@mux/mux-node";
 // this reads your MUX_TOKEN_ID and MUX_TOKEN_SECRET
 // from your environment variables
 // https://dashboard.mux.com/settings/access-tokens
+// mux
 
 export const mux = new Mux({
   tokenId: process.env.MUX_TOKEN_ID,
