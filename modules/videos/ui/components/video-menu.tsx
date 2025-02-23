@@ -5,6 +5,7 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
+import { APP_URL } from "@/constants";
 import {
   ListPlusIcon,
   MoreVerticalIcon,
@@ -26,9 +27,7 @@ const VideoMenu: React.FC<VideoMenuProps> = ({
   variant = "ghost",
 }) => {
   const onShare = () => {
-    const fullUrl = `${
-      process.env.VERCEL_URL || `http://localhost:3000`
-    }/videos/${videoId}`;
+    const fullUrl = `${APP_URL || `http://localhost:3000`}/videos/${videoId}`;
     navigator.clipboard.writeText(fullUrl);
     toast.success("Link copied to clipboard");
   };

@@ -1,6 +1,6 @@
+import { Skeleton } from "@/components/ui/skeleton";
 import { formatDurations } from "@/lib/utils";
 import Image from "next/image";
-import React from "react";
 import { THUMBNAIL_FALLBACK } from "../../constants";
 
 type Props = {
@@ -8,6 +8,14 @@ type Props = {
   durations: number;
   imageUrl?: string | null;
   previewUrl?: string | null;
+};
+
+export const VideoThumbnailSkeletons = () => {
+  return (
+    <div className="relative w-full overflow-hidden rounded-xl aspect-video">
+      <Skeleton className="size-full" />
+    </div>
+  );
 };
 
 function VideoThumbnail({ imageUrl, title, previewUrl, durations }: Props) {

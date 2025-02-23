@@ -5,10 +5,23 @@ import Link from "next/link";
 import React, { useMemo } from "react";
 import { VideoGetManyOutput } from "../../types";
 import VideoMenu from "./video-menu";
+import { Skeleton } from "@/components/ui/skeleton";
 
 type VideoInfoProps = {
   data: VideoGetManyOutput["items"][number];
   onRemove?: () => void;
+};
+
+export const VideoInfoSkeletons = () => {
+  return (
+    <div className="flex gap-3">
+      <Skeleton className="size-10 flex-shrink-0 rounded-full" />
+      <div className="min-w-0 flex-1 space-y-2">
+        <Skeleton className="h-5 w-[90%]" />
+        <Skeleton className="h-5 w-[70%]" />
+      </div>
+    </div>
+  );
 };
 
 const VideoInfo: React.FC<VideoInfoProps> = ({ data, onRemove }) => {
