@@ -3,6 +3,8 @@ import SearchView from "@/modules/search/ui/views/search-views";
 import { HydrateClient, trpc } from "@/trpc/server";
 import React from "react";
 
+export const dynamic = "force-dynamic";
+
 type PageProps = {
   searchParams: Promise<{
     query: string | undefined;

@@ -1,6 +1,6 @@
 import React from "react";
 import { CategoriesSection } from "../sections/category-sections";
-import ResultSections from "../sections/result-sections";
+import { ResultSections } from "../sections/result-sections";
 
 type SearchViewProps = {
   query: string | undefined;

@@ -4,16 +4,44 @@ import InfiniteScroll from "@/components/infinite-scroll";
 import { DEFAULT_LIMIT } from "@/constants";
 import { useIsMobile } from "@/hooks/use-mobile";
 import VideoGridCard from "@/modules/videos/ui/components/video-grid-card";
-import VideoRowCard from "@/modules/videos/ui/components/video-row-card";
+import VideoRowCard, {
+  VideoRowCardSkeleton,
+} from "@/modules/videos/ui/components/video-row-card";
 import { trpc } from "@/trpc/client";
-import React from "react";
+import React, { Suspense } from "react";
+import { ErrorBoundary } from "react-error-boundary";
 
 type ResultSectionsProps = {
   query: string | undefined;
   categoryId: string | undefined;
 };
 
-const ResultSections: React.FC<ResultSectionsProps> = ({
+export const ResultSections = (props: ResultSectionsProps) => {
+  return (
+    <Suspense
+      key={`${props.query}-${props.categoryId}`}
+      fallback={<ResultSectionSkeleton />}
+    >
+      <ErrorBoundary fallback={<p>Error</p>}>
+        <ResultSectionsSuspense {...props} />
+      </ErrorBoundary>
+    </Suspense>
+  );
+};
+
+const ResultSectionSkeleton = () => {
+  return (
+    <div>
+      <div className="hidden flex-col gap-4 md:flex">
+        {Array.from({ length: 5 }).map((_, index) => (
+          <VideoRowCardSkeleton key={index} />
+        ))}
+      </div>
+    </div>
+  );
+};
+
+const ResultSectionsSuspense: React.FC<ResultSectionsProps> = ({
   categoryId,
   query,
 }) => {
@@ -55,4 +83,3 @@ const ResultSections: React.FC<ResultSectionsProps> = ({
     </>
   );
 };
-export default ResultSections;
