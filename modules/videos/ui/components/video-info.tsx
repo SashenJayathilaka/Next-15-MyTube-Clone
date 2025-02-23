@@ -1,3 +1,4 @@
+import { Skeleton } from "@/components/ui/skeleton";
 import UserAvatar from "@/components/user-avatar";
 import UserInfo from "@/modules/users/ui/components/user-info";
 import { formatDistanceToNow } from "date-fns";
@@ -5,7 +6,6 @@ import Link from "next/link";
 import React, { useMemo } from "react";
 import { VideoGetManyOutput } from "../../types";
 import VideoMenu from "./video-menu";
-import { Skeleton } from "@/components/ui/skeleton";
 
 type VideoInfoProps = {
   data: VideoGetManyOutput["items"][number];
@@ -28,8 +28,8 @@ const VideoInfo: React.FC<VideoInfoProps> = ({ data, onRemove }) => {
   const compactViews = useMemo(() => {
     return Intl.NumberFormat("en", {
       notation: "compact",
-    }).format(data.likeCount);
-  }, [data.likeCount]);
+    }).format(data.viewCount);
+  }, [data.viewCount]);
 
   const compactDate = useMemo(() => {
     return formatDistanceToNow(data.createdAt, { addSuffix: true });
@@ -51,7 +51,7 @@ const VideoInfo: React.FC<VideoInfoProps> = ({ data, onRemove }) => {
         </Link>
         <Link href={`/videos/${data.id}`}>
           <p className="text-sm text-gray-600 line-clamp-1">
-            {compactViews} • {compactDate}
+            {compactViews} views • {compactDate}
           </p>
         </Link>
       </div>

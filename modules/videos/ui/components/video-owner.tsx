@@ -41,7 +41,7 @@ const VideoOwner: React.FC<VideoOwnerProps> = ({ user, videoId }) => {
       ) : (
         <SubscriptionButton
           onClick={onClick}
-          disabled={isPending || isLoaded}
+          disabled={isPending || !isLoaded}
           isSubscribed={user.viewerSubscripted}
           className="flex-none"
         />
