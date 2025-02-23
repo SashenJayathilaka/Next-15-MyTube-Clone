@@ -23,7 +23,9 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
+import { Skeleton } from "@/components/ui/skeleton";
 import { Textarea } from "@/components/ui/textarea";
+import { APP_URL } from "@/constants";
 import { videoUpdateSchema } from "@/db/schema";
 import { snakeCaseToTitle } from "@/lib/utils";
 import { THUMBNAIL_FALLBACK } from "@/modules/videos/constants";
@@ -38,6 +40,7 @@ import {
   Loader2Icon,
   LockIcon,
   MoreVerticalIcon,
+  RotateCcwIcon,
   RotateCwIcon,
   SparkleIcon,
   TrashIcon,
@@ -52,7 +55,6 @@ import { toast } from "sonner";
 import { z } from "zod";
 import ThumbnailUploadModal from "../components/thumbnail-upload-modal";
 import ThumbnailGenerateModal from "../components/ThumbnailGenerateModal";
-import { Skeleton } from "@/components/ui/skeleton";
 
 type FormSectionsProps = {
   videoId: string;
@@ -158,6 +160,17 @@ const FormSectionsSuspense: React.FC<FormSectionsProps> = ({ videoId }) => {
     },
   });
 
+  const revalidate = trpc.videos.revalidate.useMutation({
+    onSuccess: () => {
+      utils.studio.getMany.invalidate();
+      utils.studio.getOne.invalidate({ id: videoId });
+      toast.success("Video Revalidated");
+    },
+    onError: () => {
+      toast.error("Something went wrong");
+    },
+  });
+
   /*   const generateThumbnail = trpc.videos.generateThumbnail.useMutation({
     onSuccess: () => {
       toast.success("Background Job started", {
@@ -212,9 +225,7 @@ const FormSectionsSuspense: React.FC<FormSectionsProps> = ({ videoId }) => {
   };
 
   //TODO:
-  const fullUrl = `${
-    process.env.VERCEL_URL || `http://localhost:3000`
-  }/videos/${video.id}`;
+  const fullUrl = `${APP_URL || `http://localhost:3000`}/videos/${video.id}`;
   const [isCopied, setIsCopied] = useState(false);
 
   const onCopy = async () => {
@@ -260,11 +271,22 @@ const FormSectionsSuspense: React.FC<FormSectionsProps> = ({ videoId }) => {
                     <MoreVerticalIcon />
                   </Button>
                 </DropdownMenuTrigger>
-                <DropdownMenuContent
-                  align="end"
-                  onClick={() => remove.mutate({ id: video.id })}
-                >
-                  <DropdownMenuItem className="cursor-pointer">
+                <DropdownMenuContent align="end">
+                  <DropdownMenuItem
+                    className="cursor-pointer"
+                    onClick={() =>
+                      revalidate.mutate({
+                        id: video.id,
+                      })
+                    }
+                  >
+                    <RotateCcwIcon className="size-4 mr-2" />
+                    Revalidate
+                  </DropdownMenuItem>
+                  <DropdownMenuItem
+                    className="cursor-pointer"
+                    onClick={() => remove.mutate({ id: video.id })}
+                  >
                     <TrashIcon className="size-4 mr-2" />
                     Delete
                   </DropdownMenuItem>
