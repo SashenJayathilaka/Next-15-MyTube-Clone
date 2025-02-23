@@ -23,7 +23,7 @@ type VideoMenuProps = {
 const VideoMenu: React.FC<VideoMenuProps> = ({
   onRemove,
   videoId,
-  variant,
+  variant = "ghost",
 }) => {
   const onShare = () => {
     const fullUrl = `${
