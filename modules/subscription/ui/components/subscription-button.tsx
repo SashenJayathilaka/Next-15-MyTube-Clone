@@ -17,6 +17,8 @@ const SubscriptionButton: React.FC<SubscriptionButtonProps> = ({
   className,
   size,
 }) => {
+  // TODO: button disabled
+
   return (
     <Button
       size={size}
