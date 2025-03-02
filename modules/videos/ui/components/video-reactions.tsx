@@ -27,6 +27,7 @@ const VideoReactions: React.FC<VideoReactionsProps> = ({
   const like = trpc.videoReactions.like.useMutation({
     onSuccess: () => {
       utils.videos.getOne.invalidate({ id: videoId });
+      utils.playList.getLiked.invalidate();
     },
 
     onError: (error) => {
@@ -40,6 +41,7 @@ const VideoReactions: React.FC<VideoReactionsProps> = ({
   const dislike = trpc.videoReactions.dislike.useMutation({
     onSuccess: () => {
       utils.videos.getOne.invalidate({ id: videoId });
+      utils.playList.getLiked.invalidate();
     },
 
     onError: (error) => {

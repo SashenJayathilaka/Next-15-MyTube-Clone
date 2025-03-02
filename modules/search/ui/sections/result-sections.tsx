@@ -59,7 +59,7 @@ const ResultSectionsSuspense: React.FC<ResultSectionsProps> = ({
   return (
     <>
       {isMobile ? (
-        <div className="flex flex-col gap-4 gap-y-10">
+        <div className="flex flex-col gap-4 gap-y-10 md:hidden">
           {results.pages
             .flatMap((page) => page.items)
             .map((video) => (
@@ -67,7 +67,7 @@ const ResultSectionsSuspense: React.FC<ResultSectionsProps> = ({
             ))}
         </div>
       ) : (
-        <div className="flex flex-col gap-4">
+        <div className="hidden flex-col gap-4 md:flex">
           {results.pages
             .flatMap((page) => page.items)
             .map((video) => (
