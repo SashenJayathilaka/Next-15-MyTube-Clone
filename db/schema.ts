@@ -229,7 +229,7 @@ export const commentRelationReactions = relations(
 );
 
 export const videoViews = pgTable(
-  "video_views",
+  "viewer_video_views",
   {
     userId: uuid("user_id")
       .references(() => users.id, { onDelete: "cascade" })
