@@ -21,7 +21,7 @@ export const reactionType = pgEnum("reaction_type", ["like", "dislike"]);
 export const playListVideos = pgTable(
   "playList_videos",
   {
-    playLitsId: uuid("playList_id")
+    playLitsId: uuid("playlist_id")
       .references(() => playLists.id, { onDelete: "cascade" })
       .notNull(),
     videoId: uuid("video_id")
