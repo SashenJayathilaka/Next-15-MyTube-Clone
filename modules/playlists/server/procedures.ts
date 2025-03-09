@@ -36,7 +36,7 @@ export const playListRouter = createTRPCRouter({
       const [existingVideo] = await db
         .select()
         .from(videos)
-        .where(eq(playLists.id, playlistId));
+        .where(eq(videos.id, videoId));
 
       if (!existingVideo) {
         throw new TRPCError({ code: "NOT_FOUND" });
@@ -52,19 +52,21 @@ export const playListRouter = createTRPCRouter({
           )
         );
 
-      if (existingPlaylistVideo) {
-        throw new TRPCError({ code: "CONFLICT" });
+      if (!existingPlaylistVideo) {
+        throw new TRPCError({ code: "NOT_FOUND" });
       }
 
-      const [createdPlayListVideos] = await db
-        .insert(playListVideos)
-        .values({
-          playLitsId: playlistId,
-          videoId: videoId,
-        })
+      const [deletePlaylistVideos] = await db
+        .delete(playListVideos)
+        .where(
+          and(
+            eq(playListVideos.playLitsId, playlistId),
+            eq(playListVideos.videoId, videoId)
+          )
+        )
         .returning();
 
-      return createdPlayListVideos;
+      return deletePlaylistVideos;
     }),
   addVideo: protectedProcedure
     .input(
@@ -89,7 +91,7 @@ export const playListRouter = createTRPCRouter({
       const [existingVideo] = await db
         .select()
         .from(videos)
-        .where(eq(playLists.id, playlistId));
+        .where(eq(videos.id, videoId));
 
       if (!existingVideo) {
         throw new TRPCError({ code: "NOT_FOUND" });
@@ -213,6 +215,14 @@ export const playListRouter = createTRPCRouter({
             eq(playLists.id, playListVideos.playLitsId)
           ),
           user: users,
+          thumbnailUrl: sql<string | null>`(
+            SELECT  v.thumbnail_url
+            FROM ${playListVideos} pv
+            JOIN ${videos} v ON v.id = pv.video_id
+            WHERE pv.playlist_id = ${playLists.id}
+            ORDER BY pv.update_at DESC
+            LIMIT 1
+          )`,
         })
         .from(playLists)
         .innerJoin(users, eq(playLists.userId, users.id))
