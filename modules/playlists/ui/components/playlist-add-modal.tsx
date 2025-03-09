@@ -5,6 +5,7 @@ import { DEFAULT_LIMIT } from "@/constants";
 import { trpc } from "@/trpc/client";
 import { Loader2Icon, SquareCheckIcon, SquareIcon } from "lucide-react";
 import React from "react";
+import { toast } from "sonner";
 
 type PlaylistAddModalProps = {
   open: boolean;
@@ -45,6 +46,28 @@ const PlaylistAddModal: React.FC<PlaylistAddModalProps> = ({
     onOpenChange(newOpen);
   };
 
+  const addVideo = trpc.playList.addVideo.useMutation({
+    onSuccess: () => {
+      toast.success("Video Add to playlist");
+      utils.playList.getMany.invalidate();
+      utils.playList.getManyForVideo.invalidate({ videoId });
+    },
+    onError: () => {
+      toast.error("Something went wrong");
+    },
+  });
+
+  const removeVideo = trpc.playList.removeVideo.useMutation({
+    onSuccess: () => {
+      toast.success("Video remove from playlist");
+      utils.playList.getMany.invalidate();
+      utils.playList.getManyForVideo.invalidate({ videoId });
+    },
+    onError: () => {
+      toast.error("Something went wrong");
+    },
+  });
+
   return (
     <ResponsiveSDialog
       title="Add to Playlist"
@@ -66,6 +89,16 @@ const PlaylistAddModal: React.FC<PlaylistAddModalProps> = ({
                 variant="ghost"
                 className="w-full justify-start px-2 [&_svg]:size-5"
                 size="lg"
+                onClick={() => {
+                  if (playlist.containsVideo) {
+                    removeVideo.mutate({ playlistId: playlist.id, videoId });
+                  } else {
+                    addVideo.mutate({ playlistId: playlist.id, videoId });
+                  }
+                }}
+                disabled={
+                  addVideo.isPending || removeVideo.isPending || !videoId
+                }
               >
                 {playlist.containsVideo ? (
                   <SquareCheckIcon className="mr-2" />
