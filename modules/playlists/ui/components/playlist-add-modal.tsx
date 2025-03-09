@@ -47,10 +47,12 @@ const PlaylistAddModal: React.FC<PlaylistAddModalProps> = ({
   };
 
   const addVideo = trpc.playList.addVideo.useMutation({
-    onSuccess: () => {
+    onSuccess: (data) => {
       toast.success("Video Add to playlist");
       utils.playList.getMany.invalidate();
       utils.playList.getManyForVideo.invalidate({ videoId });
+      utils.playList.getOne.invalidate({ id: data.playLitsId });
+      utils.playList.getVideos.invalidate({ playlistId: data.playLitsId });
     },
     onError: () => {
       toast.error("Something went wrong");
@@ -58,10 +60,14 @@ const PlaylistAddModal: React.FC<PlaylistAddModalProps> = ({
   });
 
   const removeVideo = trpc.playList.removeVideo.useMutation({
-    onSuccess: () => {
+    onSuccess: (data) => {
       toast.success("Video remove from playlist");
       utils.playList.getMany.invalidate();
       utils.playList.getManyForVideo.invalidate({ videoId });
+      utils.playList.getOne.invalidate({ id: data.playLitsId });
+      utils.playList.getVideos.invalidate({
+        playlistId: data.playLitsId,
+      });
     },
     onError: () => {
       toast.error("Something went wrong");
