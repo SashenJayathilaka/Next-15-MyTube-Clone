@@ -62,6 +62,7 @@ const SubscriptionsVideoSectionsSuspense: React.FC = () => {
           .flatMap((page) => page.items)
           .map((subscriptions) => (
             <Link
+              prefetch
               key={subscriptions.creatorId}
               href={`/users/${subscriptions.user.id}`}
             >

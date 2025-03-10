@@ -10,7 +10,7 @@ export const HomeNavBar = () => {
       <div className="flex items-center gap-4 w-full">
         <div className="flex items-center flex-shrink-0">
           <SidebarTrigger />
-          <Link href="/">
+          <Link prefetch href="/" className="hidden md:block">
             <div className="p-4 flex items-center gap-1">
               <Image src="/logo.png" alt="logo" width={52} height={52} />
               <p className="text-xl font-semibold tracking-tight">New Tube</p>
