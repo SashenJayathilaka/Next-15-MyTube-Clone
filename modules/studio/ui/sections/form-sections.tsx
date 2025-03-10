@@ -224,7 +224,6 @@ const FormSectionsSuspense: React.FC<FormSectionsProps> = ({ videoId }) => {
     update.mutate(data);
   };
 
-  //TODO:
   const fullUrl = `${APP_URL}/videos/${video.id}`;
   const [isCopied, setIsCopied] = useState(false);
 
