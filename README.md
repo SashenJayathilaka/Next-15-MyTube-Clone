@@ -11,19 +11,19 @@ A feature-rich video platform with quality controls, real-time processing, AI to
 <!-- Badges -->
 <a href="[https://slideproject.vercel.app/](https://slideproject.vercel.app/)" target="_blank">![](https://img.shields.io/website-up-down-green-red/http/monip.org.svg)</a>
 ![](https://img.shields.io/badge/Maintained-Yes-indigo)
-![](https://img.shields.io/github/forks/SashenJayathilaka/SAAS-Instagram-DM-Automations.svg)
-![](https://img.shields.io/github/stars/SashenJayathilaka/SAAS-Instagram-DM-Automations.svg)
-![](https://img.shields.io/github/issues/SashenJayathilaka/SAAS-Instagram-DM-Automations)
-![](https://img.shields.io/github/last-commit/SashenJayathilaka/SAAS-Instagram-DM-Automations)
+![](https://img.shields.io/github/forks/SashenJayathilaka/Next-15-YouTube-Clone.svg)
+![](https://img.shields.io/github/stars/SashenJayathilaka/Next-15-YouTube-Clone.svg)
+![](https://img.shields.io/github/issues/SashenJayathilaka/Next-15-YouTube-Clone)
+![](https://img.shields.io/github/last-commit/SashenJayathilaka/Next-15-YouTube-Clone)
 
 <h4>
     <a href="https://slideproject.vercel.app">View Demo</a>
   <span> · </span>
-    <a href="https://github.com/SashenJayathilaka/SAAS-Instagram-DM-Automations/blob/master/README.md">Documentation</a>
+    <a href="https://github.com/SashenJayathilaka/Next-15-YouTube-Clone/blob/master/README.md">Documentation</a>
   <span> · </span>
-    <a href="https://github.com/SashenJayathilaka/SAAS-Instagram-DM-Automations/issues">Report Bug</a>
+    <a href="https://github.com/SashenJayathilaka/Next-15-YouTube-Clone/issues">Report Bug</a>
   <span> · </span>
-    <a href="https://github.com/SashenJayathilaka/SAAS-Instagram-DM-Automations/issues">Request Feature</a>
+    <a href="https://github.com/SashenJayathilaka/Next-15-YouTube-Clone/issues">Request Feature</a>
   </h4>
 </div>
 
@@ -70,8 +70,7 @@ A feature-rich video platform with quality controls, real-time processing, AI to
     <li><a href="https://#/">Typescript</a></li>
     <li><a href="https://nextjs.org/">Next.js</a></li>
     <li><a href="https://reactjs.org/">React.js</a></li>
-    <li><a href="https://tailwindcss.com/">TailwindCSS</a></li>
-    <li><a href="https://www.prisma.io">Prisma</a></li>
+    <li><a href="https://orm.drizzle.team/">Drizzle ORM</a></li>
   </ul>
 </details>
 
@@ -102,10 +101,10 @@ A feature-rich video platform with quality controls, real-time processing, AI to
 <a href="#"><img src="https://user-images.githubusercontent.com/99184393/180462270-ea4a249c-627c-4479-9431-5c3fd25454c4.png" alt="" width="30" height="30" /></a>
         </td>
                                 <td>
-<a href="#"><img src="https://github.com/user-attachments/assets/caa288f0-ce83-404d-aafb-7dbad6fad78e" alt="" width="30"height="30"/></a>
+<a href="#"><img src="https://github.com/user-attachments/assets/743f9eae-1bce-4209-bb1e-48b130698008" alt="" width="30"height="30"/></a>
         </td>
                                       <td>
-<a href="#"><img src="https://github.com/user-attachments/assets/58b9098c-56f0-467f-9881-b4c6aebdd127" alt="" width="30"height="30"/></a>
+<a href="#"><img src="https://github.com/user-attachments/assets/3d7b4156-435d-4172-ae04-079ddb352420" alt="" width="30"height="30"/></a>
         </td>
       <td>
 <a href="#"><img src="https://github.com/user-attachments/assets/d24e0437-5919-4fc0-b0b5-4b15b8e7768e" alt="" width="30"height="30"/></a>
@@ -120,7 +119,6 @@ A feature-rich video platform with quality controls, real-time processing, AI to
 - Install Node JS in your computer <a href='https://nodejs.org/en/'>HERE</a>
 - Sign up for a clerk account <a href='https://clerk.com/'>HERE</a>
 - Sign up for a Neon<a href='https://neon.tech/'>HERE</a>
-- Sign up for a Stripe <a href='https://liveblocks.io/'>HERE</a>
 
 <!-- Env Variables -->
 
@@ -128,35 +126,45 @@ A feature-rich video platform with quality controls, real-time processing, AI to
 
 To run this project, you will need to add the following environment variables to your .env file
 
-`OPEN_AI_KEY`
+`NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY`
 
 `CLERK_SECRET_KEY`
-
-`NEXT_PUBLIC_HOST_URL`
-
-`INSTAGRAM_BASE_URL`
-
-`INSTAGRAM_CLIENT_ID`
-
-`INSTAGRAM_TOKEN_URL`
-
-`STRIPE_CLIENT_SECRET`
-
-`INSTAGRAM_CLIENT_SECRET`
-
-`INSTAGRAM_EMBEDDED_OAUTH_URL`
 
 `NEXT_PUBLIC_CLERK_SIGN_IN_URL`
 
 `NEXT_PUBLIC_CLERK_SIGN_UP_URL`
 
-`STRIPE_SUBSCRIPTION_PRICE_ID`
+`NEXT_PUBLIC_CLERK_SIGN_IN_FALLBACK_REDIRECT_URL`
 
-`NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY`
+`NEXT_PUBLIC_CLERK_SIGN_UP_FALLBACK_REDIRECT_URL`
 
-`NEXT_PUBLIC_CLERK_SIGN_IN_FORCE_REDIRECT_URL`
+`CLERK_SIGN_SECRET`
 
-`NEXT_PUBLIC_CLERK_SIGN_UP_FORCE_REDIRECT_URL`
+`DATABASE_URL`
+
+`UPSTASH_REDIS_REST_URL`
+
+`UPSTASH_REDIS_REST_TOKEN`
+
+`QSTASH_TOKEN`
+
+`UPSTASH_WORKFLOW_URL`
+
+`QSTASH_CURRENT_SIGNING_KEY`
+
+`QSTASH_NEXT_SIGNING_KEY`
+
+`MUX_TOKEN_ID`
+
+`MUX_TOKEN_SECRET`
+
+`MUX_WEBHOOK_SECRET`
+
+`UPLOADTHING_TOKEN`
+
+`OPENAI_API_KEY`
+
+`NEXT_PUBLIC_APP_URL`
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
