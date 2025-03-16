@@ -1,3 +1,4 @@
+import FramerClient from "@/components/framer-client";
 import VideoView from "@/modules/studio/ui/views/video-view";
 import { HydrateClient, trpc } from "@/trpc/server";
 
@@ -15,7 +16,9 @@ async function Page({ params }: Props) {
 
   return (
     <HydrateClient>
-      <VideoView videoId={videoId} />
+      <FramerClient>
+        <VideoView videoId={videoId} />
+      </FramerClient>
     </HydrateClient>
   );
 }

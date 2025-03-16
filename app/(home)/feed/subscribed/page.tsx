@@ -1,3 +1,4 @@
+import FramerClient from "@/components/framer-client";
 import { DEFAULT_LIMIT } from "@/constants";
 import SubscribedView from "@/modules/home/ui/views/subscribed-view";
 import { HydrateClient, trpc } from "@/trpc/server";
@@ -11,7 +12,9 @@ export default async function Page() {
 
   return (
     <HydrateClient>
-      <SubscribedView />
+      <FramerClient>
+        <SubscribedView />
+      </FramerClient>
     </HydrateClient>
   );
 }

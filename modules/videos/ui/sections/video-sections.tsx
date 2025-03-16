@@ -8,6 +8,7 @@ import { ErrorBoundary } from "react-error-boundary";
 import VideoBanner from "../components/video-banner";
 import VideoPlayer, { VideoPlayerSkeleton } from "../components/video-player";
 import VideoTopRow, { VideoTopRowSkeleton } from "../components/video-top-row";
+import ErrorPage from "@/components/error-page";
 
 type VideoSections = {
   videoId: string;
@@ -16,7 +17,7 @@ type VideoSections = {
 const VideoSections: React.FC<VideoSections> = ({ videoId }) => {
   return (
     <Suspense fallback={<VideoSectionSkeleton />}>
-      <ErrorBoundary fallback={<div>Failed to load video sections</div>}>
+      <ErrorBoundary fallback={<ErrorPage />}>
         <VideoSectionsSuspense videoId={videoId} />
       </ErrorBoundary>
     </Suspense>

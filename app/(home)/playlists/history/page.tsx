@@ -1,3 +1,4 @@
+import FramerClient from "@/components/framer-client";
 import { DEFAULT_LIMIT } from "@/constants";
 import HistoryView from "@/modules/playlists/ui/views/history-view";
 import { HydrateClient, trpc } from "@/trpc/server";
@@ -12,7 +13,9 @@ const Page: React.FC = () => {
 
   return (
     <HydrateClient>
-      <HistoryView />
+      <FramerClient>
+        <HistoryView />
+      </FramerClient>
     </HydrateClient>
   );
 };

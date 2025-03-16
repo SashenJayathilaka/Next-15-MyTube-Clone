@@ -1,5 +1,6 @@
 "use client";
 
+import ErrorPage from "@/components/error-page";
 import InfiniteScroll from "@/components/infinite-scroll";
 import { DEFAULT_LIMIT } from "@/constants";
 import CommentItem from "@/modules/comments/ui/components/comment-item";
@@ -15,7 +16,7 @@ type CommentsSectionsProps = {
 
 export const commentsSections = ({ videoId }: CommentsSectionsProps) => {
   <Suspense fallback={<CommentsSectionsSkeleton />}>
-    <ErrorBoundary fallback={<p>Error</p>}>
+    <ErrorBoundary fallback={<ErrorPage />}>
       <CommentsSectionsSuspense videoId={videoId} />
     </ErrorBoundary>
   </Suspense>;

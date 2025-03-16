@@ -1,3 +1,4 @@
+import FramerClient from "@/components/framer-client";
 import { DEFAULT_LIMIT } from "@/constants";
 import LikedView from "@/modules/playlists/ui/views/liked-view";
 import { HydrateClient, trpc } from "@/trpc/server";
@@ -12,7 +13,9 @@ const Page: React.FC = () => {
 
   return (
     <HydrateClient>
-      <LikedView />
+      <FramerClient>
+        <LikedView />
+      </FramerClient>
     </HydrateClient>
   );
 };

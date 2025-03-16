@@ -1,5 +1,6 @@
 "use client";
 
+import ErrorPage from "@/components/error-page";
 import InfiniteScroll from "@/components/infinite-scroll";
 import { DEFAULT_LIMIT } from "@/constants";
 import VideoGridCard, {
@@ -16,7 +17,7 @@ type VideosSectionsProps = {
 export const VideosSections: React.FC<VideosSectionsProps> = ({ userId }) => {
   return (
     <Suspense fallback={<VideosSectionsSkeleton />}>
-      <ErrorBoundary fallback={<p>Error...</p>}>
+      <ErrorBoundary fallback={<ErrorPage />}>
         <VideosSectionsSuspense userId={userId} />
       </ErrorBoundary>
     </Suspense>

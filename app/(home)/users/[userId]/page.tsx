@@ -1,3 +1,4 @@
+import FramerClient from "@/components/framer-client";
 import { DEFAULT_LIMIT } from "@/constants";
 import UserView from "@/modules/users/ui/views/user-view";
 import { HydrateClient, trpc } from "@/trpc/server";
@@ -18,7 +19,9 @@ const Page: React.FC<PageProps> = async ({ params }) => {
 
   return (
     <HydrateClient>
-      <UserView userId={userId} />
+      <FramerClient>
+        <UserView userId={userId} />
+      </FramerClient>
     </HydrateClient>
   );
 };

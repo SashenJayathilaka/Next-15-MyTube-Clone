@@ -1,3 +1,4 @@
+import FramerClient from "@/components/framer-client";
 import { DEFAULT_LIMIT } from "@/constants";
 import HomeView from "@/modules/home/ui/views/home-view";
 import { HydrateClient, trpc } from "@/trpc/server";
@@ -18,7 +19,9 @@ export default async function Page({ searchParams }: PageProps) {
 
   return (
     <HydrateClient>
-      <HomeView categoryId={categoryId} />
+      <FramerClient>
+        <HomeView categoryId={categoryId} />
+      </FramerClient>
     </HydrateClient>
   );
 }

@@ -1,3 +1,4 @@
+import FramerClient from "@/components/framer-client";
 import { DEFAULT_LIMIT } from "@/constants";
 import StudioView from "@/modules/studio/ui/views/studio-view";
 import { HydrateClient, trpc } from "@/trpc/server";
@@ -11,7 +12,9 @@ async function Page() {
 
   return (
     <HydrateClient>
-      <StudioView />
+      <FramerClient>
+        <StudioView />
+      </FramerClient>
     </HydrateClient>
   );
 }

@@ -1,5 +1,6 @@
 "use client";
 
+import ErrorPage from "@/components/error-page";
 import { Button } from "@/components/ui/button";
 import { Skeleton } from "@/components/ui/skeleton";
 import { trpc } from "@/trpc/client";
@@ -18,7 +19,7 @@ export const PlaylistHeaderSections: React.FC<PlaylistHeaderSectionsProps> = ({
 }) => {
   return (
     <Suspense fallback={<PlaylistHeaderSectionSkeleton />}>
-      <ErrorBoundary fallback={<p>Error...</p>}>
+      <ErrorBoundary fallback={<ErrorPage />}>
         <PlaylistHeaderSuspense playlistId={playlistId} />
       </ErrorBoundary>
     </Suspense>

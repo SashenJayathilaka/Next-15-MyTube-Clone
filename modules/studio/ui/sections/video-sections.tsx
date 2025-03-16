@@ -1,5 +1,6 @@
 "use client";
 
+import ErrorPage from "@/components/error-page";
 import InfiniteScroll from "@/components/infinite-scroll";
 import { Skeleton } from "@/components/ui/skeleton";
 import {
@@ -23,7 +24,7 @@ import { ErrorBoundary } from "react-error-boundary";
 export const videosSections = () => {
   return (
     <Suspense fallback={<VideoSectionsSkeleton />}>
-      <ErrorBoundary fallback={<p>Error...</p>}>
+      <ErrorBoundary fallback={<ErrorPage />}>
         <VideoSectionsSuspense />
       </ErrorBoundary>
     </Suspense>

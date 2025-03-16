@@ -1,5 +1,6 @@
 "use client";
 
+import ErrorPage from "@/components/error-page";
 import InfiniteScroll from "@/components/infinite-scroll";
 import { DEFAULT_LIMIT } from "@/constants";
 import { trpc } from "@/trpc/client";
@@ -12,7 +13,7 @@ import PlaylistGridCard, {
 export const PlaylistSections = () => {
   return (
     <Suspense fallback={<PlaylistSectionsSkeleton />}>
-      <ErrorBoundary fallback={<p>Error...</p>}>
+      <ErrorBoundary fallback={<ErrorPage />}>
         <PlayListSectionsSuspense />
       </ErrorBoundary>
     </Suspense>
