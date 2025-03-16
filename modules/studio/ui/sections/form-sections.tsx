@@ -1,5 +1,6 @@
 "use client";
 
+import ErrorPage from "@/components/error-page";
 import { Button } from "@/components/ui/button";
 import {
   DropdownMenu,
@@ -63,7 +64,7 @@ type FormSectionsProps = {
 export const FormSections = ({ videoId }: FormSectionsProps) => {
   return (
     <Suspense fallback={<FormSectionsSkeleton />}>
-      <ErrorBoundary fallback={<p>Error</p>}>
+      <ErrorBoundary fallback={<ErrorPage />}>
         <FormSectionsSuspense videoId={videoId} />
       </ErrorBoundary>
     </Suspense>

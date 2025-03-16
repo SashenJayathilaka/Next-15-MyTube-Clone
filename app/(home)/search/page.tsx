@@ -1,3 +1,4 @@
+import FramerClient from "@/components/framer-client";
 import { DEFAULT_LIMIT } from "@/constants";
 import SearchView from "@/modules/search/ui/views/search-views";
 import { HydrateClient, trpc } from "@/trpc/server";
@@ -24,7 +25,9 @@ const Page: React.FC<PageProps> = async ({ searchParams }) => {
 
   return (
     <HydrateClient>
-      <SearchView query={query} categoryId={categoryId} />
+      <FramerClient>
+        <SearchView query={query} categoryId={categoryId} />
+      </FramerClient>
     </HydrateClient>
   );
 };

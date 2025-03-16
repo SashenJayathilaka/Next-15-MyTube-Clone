@@ -1,5 +1,6 @@
 "use client";
 
+import ErrorPage from "@/components/error-page";
 import InfiniteScroll from "@/components/infinite-scroll";
 import { DEFAULT_LIMIT } from "@/constants";
 import { trpc } from "@/trpc/client";
@@ -14,7 +15,7 @@ import SubscriptionsItems, {
 export const SubscriptionsVideoSections = () => {
   return (
     <Suspense fallback={<SubscriptionsVideosSectionsSkeleton />}>
-      <ErrorBoundary fallback={<p>Error...</p>}>
+      <ErrorBoundary fallback={<ErrorPage></ErrorPage>}>
         <SubscriptionsVideoSectionsSuspense />
       </ErrorBoundary>
     </Suspense>

@@ -1,5 +1,6 @@
 "use client";
 
+import ErrorPage from "@/components/error-page";
 import InfiniteScroll from "@/components/infinite-scroll";
 import { DEFAULT_LIMIT } from "@/constants";
 import { useIsMobile } from "@/hooks/use-mobile";
@@ -22,7 +23,7 @@ export const ResultSections = (props: ResultSectionsProps) => {
       key={`${props.query}-${props.categoryId}`}
       fallback={<ResultSectionSkeleton />}
     >
-      <ErrorBoundary fallback={<p>Error</p>}>
+      <ErrorBoundary fallback={<ErrorPage />}>
         <ResultSectionsSuspense {...props} />
       </ErrorBoundary>
     </Suspense>

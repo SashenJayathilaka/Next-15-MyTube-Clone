@@ -1,5 +1,6 @@
 "use client";
 
+import ErrorPage from "@/components/error-page";
 import FilterCarousel from "@/components/filter-carousel";
 import { trpc } from "@/trpc/client";
 import { useRouter } from "next/navigation";
@@ -13,7 +14,7 @@ type Props = {
 export const CategoriesSection = ({ categoryId }: Props) => {
   return (
     <Suspense fallback={<CategoriesSkeletonComponent />}>
-      <ErrorBoundary fallback={<p>Error...</p>}>
+      <ErrorBoundary fallback={<ErrorPage />}>
         <CategoriesSectionSuspense categoryId={categoryId} />
       </ErrorBoundary>
     </Suspense>

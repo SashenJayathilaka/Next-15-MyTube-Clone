@@ -1,5 +1,6 @@
 "use client";
 
+import ErrorPage from "@/components/error-page";
 import { Separator } from "@/components/ui/separator";
 import { trpc } from "@/trpc/client";
 import React, { Suspense } from "react";
@@ -18,7 +19,7 @@ type UserSectionsProps = {
 export const UserSections: React.FC<UserSectionsProps> = ({ userId }) => {
   return (
     <Suspense fallback={<UserSectionsSkeleton />}>
-      <ErrorBoundary fallback={<p>error...</p>}>
+      <ErrorBoundary fallback={<ErrorPage />}>
         <UserSectionsSuspense userId={userId} />
       </ErrorBoundary>
     </Suspense>

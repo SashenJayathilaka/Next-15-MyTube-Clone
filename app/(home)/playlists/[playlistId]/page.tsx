@@ -1,3 +1,4 @@
+import FramerClient from "@/components/framer-client";
 import { DEFAULT_LIMIT } from "@/constants";
 import VideosView from "@/modules/playlists/ui/views/videos-view";
 import { HydrateClient, trpc } from "@/trpc/server";
@@ -19,7 +20,9 @@ const Page: React.FC<PageProps> = async ({ params }) => {
 
   return (
     <HydrateClient>
-      <VideosView playlistId={playlistId} />
+      <FramerClient>
+        <VideosView playlistId={playlistId} />
+      </FramerClient>
     </HydrateClient>
   );
 };

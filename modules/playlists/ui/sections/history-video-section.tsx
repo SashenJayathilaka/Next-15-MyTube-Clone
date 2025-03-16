@@ -1,5 +1,6 @@
 "use client";
 
+import ErrorPage from "@/components/error-page";
 import InfiniteScroll from "@/components/infinite-scroll";
 import { DEFAULT_LIMIT } from "@/constants";
 import VideoGridCard, {
@@ -15,7 +16,7 @@ import { ErrorBoundary } from "react-error-boundary";
 export const HistoryVideoSections = () => {
   return (
     <Suspense fallback={<HistoryVideosSectionsSkeleton />}>
-      <ErrorBoundary fallback={<p>Error...</p>}>
+      <ErrorBoundary fallback={<ErrorPage />}>
         <HistoryVideoSectionsSuspense />
       </ErrorBoundary>
     </Suspense>

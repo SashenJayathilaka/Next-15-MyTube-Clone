@@ -1,12 +1,24 @@
 "use client";
 
+import ErrorPage from "@/components/error-page";
 import { Button } from "@/components/ui/button";
 import { APP_URL } from "@/constants";
 import { SearchIcon, XIcon } from "lucide-react";
 import { useRouter, useSearchParams } from "next/navigation";
-import React, { useState } from "react";
+import React, { Suspense, useState } from "react";
+import { ErrorBoundary } from "react-error-boundary";
 
-export const SearchInput = () => {
+export const SearchInput: React.FC = () => {
+  return (
+    <Suspense fallback={<p>Loading...</p>}>
+      <ErrorBoundary fallback={<ErrorPage />}>
+        <SearchInputSuspense />
+      </ErrorBoundary>
+    </Suspense>
+  );
+};
+
+export const SearchInputSuspense = () => {
   const router = useRouter();
   const searchParams = useSearchParams();
   const query = searchParams.get("query") || "";

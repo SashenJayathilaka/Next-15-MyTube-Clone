@@ -1,3 +1,4 @@
+import FramerClient from "@/components/framer-client";
 import { DEFAULT_LIMIT } from "@/constants";
 import SubscriptionsView from "@/modules/subscription/ui/views/subscriptions-view";
 import { HydrateClient, trpc } from "@/trpc/server";
@@ -10,7 +11,9 @@ const Page: React.FC = async () => {
 
   return (
     <HydrateClient>
-      <SubscriptionsView />
+      <FramerClient>
+        <SubscriptionsView />
+      </FramerClient>
     </HydrateClient>
   );
 };

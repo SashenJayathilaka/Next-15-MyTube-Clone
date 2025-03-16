@@ -1,5 +1,6 @@
 "use client";
 
+import ErrorPage from "@/components/error-page";
 import InfiniteScroll from "@/components/infinite-scroll";
 import { DEFAULT_LIMIT } from "@/constants";
 import { trpc } from "@/trpc/client";
@@ -23,7 +24,7 @@ export const SuggestionsSection: React.FC<SuggestionsSectionProps> = ({
 }) => {
   return (
     <Suspense fallback={<SuggestionsSectionSkeletonComponent />}>
-      <ErrorBoundary fallback={<p>Error</p>}>
+      <ErrorBoundary fallback={<ErrorPage />}>
         <SuggestionsSectionSuspense videoId={videoId} isManual={isManual} />
       </ErrorBoundary>
     </Suspense>
