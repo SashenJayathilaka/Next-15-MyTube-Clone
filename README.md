@@ -9,7 +9,7 @@ A feature-rich video platform with quality controls, real-time processing, AI to
   </p>
   
 <!-- Badges -->
-<a href="[https://slideproject.vercel.app/](https://slideproject.vercel.app/)" target="_blank">![](https://img.shields.io/website-up-down-green-red/http/monip.org.svg)</a>
+<a href="[https://next-15-my-tube-clone.vercel.app](https://next-15-my-tube-clone.vercel.app)" target="_blank">![](https://img.shields.io/website-up-down-green-red/http/monip.org.svg)</a>
 ![](https://img.shields.io/badge/Maintained-Yes-indigo)
 ![](https://img.shields.io/github/forks/SashenJayathilaka/Next-15-YouTube-Clone.svg)
 ![](https://img.shields.io/github/stars/SashenJayathilaka/Next-15-YouTube-Clone.svg)
@@ -17,7 +17,7 @@ A feature-rich video platform with quality controls, real-time processing, AI to
 ![](https://img.shields.io/github/last-commit/SashenJayathilaka/Next-15-YouTube-Clone)
 
 <h4>
-    <a href="https://slideproject.vercel.app">View Demo</a>
+    <a href="https://next-15-my-tube-clone.vercel.app/">View Demo</a>
   <span> · </span>
     <a href="https://github.com/SashenJayathilaka/Next-15-YouTube-Clone/blob/master/README.md">Documentation</a>
   <span> · </span>
@@ -53,10 +53,11 @@ A feature-rich video platform with quality controls, real-time processing, AI to
 ### :camera: Screenshots
 
 <div align="center">
-<a href="https://slideproject.vercel.app/"><img  src='https://github.com/user-attachments/assets/001cf5c4-4d3a-42d0-9bdb-c514874041dd' alt='image'/></a>
+<a href="https://next-15-my-tube-clone.vercel.app/"><img  src='https://github.com/user-attachments/assets/46c81fa5-6ae2-4f82-a63f-323d8a0b551f' alt='image'/></a>
+  <a href="https://next-15-my-tube-clone.vercel.app/"><img  src='https://github.com/user-attachments/assets/4cdbc17a-fffa-41ef-acc1-d9c8a92dae2c' alt='image' width="1500" /></a>
 </div>
 
-## <a href="https://miro-clone-jade.vercel.app" target="_blank">LIVE DEMO 💥</a>
+## <a href="https://next-15-my-tube-clone.vercel.app" target="_blank">LIVE DEMO 💥</a>
 
 ![forthebadge](https://forthebadge.com/images/badges/built-with-love.svg)
 ![forthebadge](https://forthebadge.com/images/badges/for-you.svg)
@@ -108,6 +109,9 @@ A feature-rich video platform with quality controls, real-time processing, AI to
         </td>
       <td>
 <a href="#"><img src="https://github.com/user-attachments/assets/d24e0437-5919-4fc0-b0b5-4b15b8e7768e" alt="" width="30"height="30"/></a>
+        </td>
+              <td>
+<a href="#"><img src="https://github.com/user-attachments/assets/34bf8248-34e4-4aeb-b46a-1068c361870d" alt="" width="30"height="30"/></a>
         </td>
     </tr>
 </table>
@@ -176,67 +180,20 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 Install my-project with npm
 
 ```
-npx create-next-app@latest my-project --typescript --eslint
+bunx create-next-app@latest my-project --typescript --eslint
 ```
 
 ```
 cd my-project
 ```
 
-Install dependencies
-
-<!-- ### :test_tube: Install Tailwind CSS with Next.js
-
-#### Install Tailwind CSS
-
-![](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)
-
-Install tailwindcss and its peer dependencies via npm, and then run the init command to generate both `tailwind.config.js` and `postcss.config.js`.
-
 ```
-npm install -D tailwindcss postcss autoprefixer
+bun install
 ```
-
-```
-npx tailwindcss init -p
-```
-
-#### Configure your template paths
-
-Add the paths to all of your template files in your `tailwind.config.js` file.
-<br>
-
-```js
-/** @type {import('tailwindcss').Config} */
-module.exports = {
-  content: [
-    "./app/**/*.{js,ts,jsx,tsx}",
-    "./pages/**/*.{js,ts,jsx,tsx}",
-    "./components/**/*.{js,ts,jsx,tsx}",
-
-    // Or if using `src` directory:
-    "./src/**/*.{js,ts,jsx,tsx}",
-  ],
-  theme: {
-    extend: {},
-  },
-  plugins: [],
-};
-```
-
-#### Add the Tailwind directives to your CSS
-
-Add the `@tailwind` directives for each of Tailwind’s layers to your `./styles/globals.css` file.
-
-```css
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-``` -->
 
 Install dependencies
 
-<a href="https://github.com/SashenJayathilaka/Airbnb-Build/blob/master/package.json" target="_blank">🔶 Dependency Info</a>
+<a href="https://github.com/SashenJayathilaka/Next-15-YouTube-Clone/blob/main/package.json" target="_blank">🔶 Dependency Info</a>
 
 <!-- Run Locally -->
 
@@ -247,25 +204,25 @@ Install dependencies
 Clone the project
 
 ```bash
-  https://github.com/SashenJayathilaka/Miro-Clone.git
+  https://github.com/SashenJayathilaka/Next-15-YouTube-Clone
 ```
 
 change directory
 
 ```bash
-  cd Miro-Clone
+  cd Next-15-YouTube-Clone
 ```
 
 Install dependencies
 
 ```bash
-  npm install
+  bun install
 ```
 
 Start the server
 
 ```bash
-  npm run dev
+  bun run dev:all
 ```
 
 <hr />
@@ -309,7 +266,7 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
 
 Sashen - [@twitter_handle](https://twitter.com/SashenHasinduJ) - sashenjayathilaka95@gmail.com
 
-Project Link: [https://github.com/SashenJayathilaka/SAAS-Instagram-DM-Automations.git](https://github.com/SashenJayathilaka/SAAS-Instagram-DM-Automations.git)
+Project Link: [https://github.com/SashenJayathilaka/Next-15-YouTube-Clone](https://github.com/SashenJayathilaka/Next-15-YouTube-Clone)
 
 <br />
 
