@@ -2,7 +2,7 @@
 
   <img src="https://github.com/user-attachments/assets/816a59f0-5632-4f48-9195-9ebd585d3f49" alt="logo" width="250" height="auto" />
   
-# Next 15 YouTube Clone
+# Next 15 MyTube Clone
   
   <p>
 A feature-rich video platform with quality controls, real-time processing, AI tools for transcription, thumbnails, and titles. Includes Creator Studio, custom playlists, responsive design, and engagement features. Built with Next.js 15, React 19, tRPC, and PostgreSQL for a secure, scalable experience.
@@ -11,19 +11,19 @@ A feature-rich video platform with quality controls, real-time processing, AI to
 <!-- Badges -->
 <a href="[https://next-15-my-tube-clone.vercel.app](https://next-15-my-tube-clone.vercel.app)" target="_blank">![](https://img.shields.io/website-up-down-green-red/http/monip.org.svg)</a>
 ![](https://img.shields.io/badge/Maintained-Yes-indigo)
-![](https://img.shields.io/github/forks/SashenJayathilaka/Next-15-YouTube-Clone.svg)
-![](https://img.shields.io/github/stars/SashenJayathilaka/Next-15-YouTube-Clone.svg)
-![](https://img.shields.io/github/issues/SashenJayathilaka/Next-15-YouTube-Clone)
-![](https://img.shields.io/github/last-commit/SashenJayathilaka/Next-15-YouTube-Clone)
+![](https://img.shields.io/github/forks/SashenJayathilaka/Next-15-MyTube-Clone.svg)
+![](https://img.shields.io/github/stars/SashenJayathilaka/Next-15-MyTube-Clone.svg)
+![](https://img.shields.io/github/issues/SashenJayathilaka/Next-15-MyTube-Clone)
+![](https://img.shields.io/github/last-commit/SashenJayathilaka/Next-15-MyTube-Clone)
 
 <h4>
     <a href="https://next-15-my-tube-clone.vercel.app/">View Demo</a>
   <span> · </span>
-    <a href="https://github.com/SashenJayathilaka/Next-15-YouTube-Clone/blob/master/README.md">Documentation</a>
+    <a href="https://github.com/SashenJayathilaka/Next-15-MyTube-Clone/blob/master/README.md">Documentation</a>
   <span> · </span>
-    <a href="https://github.com/SashenJayathilaka/Next-15-YouTube-Clone/issues">Report Bug</a>
+    <a href="https://github.com/SashenJayathilaka/Next-15-MyTube-Clone/issues">Report Bug</a>
   <span> · </span>
-    <a href="https://github.com/SashenJayathilaka/Next-15-YouTube-Clone/issues">Request Feature</a>
+    <a href="https://github.com/SashenJayathilaka/Next-15-MyTube-Clone/issues">Request Feature</a>
   </h4>
 </div>
 
@@ -130,17 +130,7 @@ A feature-rich video platform with quality controls, real-time processing, AI to
 
 To run this project, you will need to add the following environment variables to your .env file
 
-`NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY`
-
 `CLERK_SECRET_KEY`
-
-`NEXT_PUBLIC_CLERK_SIGN_IN_URL`
-
-`NEXT_PUBLIC_CLERK_SIGN_UP_URL`
-
-`NEXT_PUBLIC_CLERK_SIGN_IN_FALLBACK_REDIRECT_URL`
-
-`NEXT_PUBLIC_CLERK_SIGN_UP_FALLBACK_REDIRECT_URL`
 
 `CLERK_SIGN_SECRET`
 
@@ -154,10 +144,6 @@ To run this project, you will need to add the following environment variables to
 
 `UPSTASH_WORKFLOW_URL`
 
-`QSTASH_CURRENT_SIGNING_KEY`
-
-`QSTASH_NEXT_SIGNING_KEY`
-
 `MUX_TOKEN_ID`
 
 `MUX_TOKEN_SECRET`
@@ -169,6 +155,20 @@ To run this project, you will need to add the following environment variables to
 `OPENAI_API_KEY`
 
 `NEXT_PUBLIC_APP_URL`
+
+`QSTASH_NEXT_SIGNING_KEY`
+
+`NEXT_PUBLIC_CLERK_SIGN_IN_URL`
+
+`NEXT_PUBLIC_CLERK_SIGN_UP_URL`
+
+`QSTASH_CURRENT_SIGNING_KEY`
+
+`NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY`
+
+`NEXT_PUBLIC_CLERK_SIGN_IN_FALLBACK_REDIRECT_URL`
+
+`NEXT_PUBLIC_CLERK_SIGN_UP_FALLBACK_REDIRECT_URL`
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
@@ -266,7 +266,7 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
 
 Sashen - [@twitter_handle](https://twitter.com/SashenHasinduJ) - sashenjayathilaka95@gmail.com
 
-Project Link: [https://github.com/SashenJayathilaka/Next-15-YouTube-Clone](https://github.com/SashenJayathilaka/Next-15-YouTube-Clone)
+Project Link: [https://github.com/SashenJayathilaka/Next-15-YouTube-Clone](https://github.com/SashenJayathilaka/Next-15-MyTube-Clone)
 
 <br />
 
